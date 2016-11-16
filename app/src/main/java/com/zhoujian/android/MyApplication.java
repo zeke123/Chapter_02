@@ -12,10 +12,7 @@ import com.zhoujian.android.utils.ProcessNameUtil;
 
 public class MyApplication extends Application
 {
-
-
     public static final String TAG = "MyApplication";
-
     //同时选中修改变量 ：control+command+g
     private String processName;
     @Override
