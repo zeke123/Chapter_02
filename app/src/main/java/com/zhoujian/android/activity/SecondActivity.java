@@ -1,8 +1,10 @@
 package com.zhoujian.android.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import com.zhoujian.android.R;
 import com.zhoujian.android.UserManager;
@@ -31,6 +33,20 @@ public class SecondActivity extends Activity {
         //这就是多进程使用带来的问题
         Log.e(TAG, "UserManager.mUserId ====" + UserManager.mUserId);
 
+        initEvent();
+
+    }
+
+    private void initEvent() {
+
+        mBtStart.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                startActivity(new Intent(SecondActivity.this,ThirdActivity.class));
+            }
+        });
     }
 
     @Override

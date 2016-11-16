@@ -27,8 +27,9 @@ public class MyApplication extends Application
         Log.e(TAG,"MyApplication start,process name:"+processName);
 
 
+        //分别启动三个Activity  Application会重新创建
         //MyApplication start,process name:com.zhoujian.android
-        // MyApplication start,process name:com.zhoujian.android:romote
-        //
+        //MyApplication start,process name:com.zhoujian.android:romote
+        //MyApplication start,process name:com.zhoujian.android.romote
     }
 }
