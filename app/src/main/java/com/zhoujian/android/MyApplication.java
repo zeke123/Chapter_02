@@ -3,7 +3,6 @@ package com.zhoujian.android;
 import android.app.Application;
 import android.os.Process;
 import android.util.Log;
-
 import com.zhoujian.android.utils.ProcessNameUtil;
 
 /**

@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.zhoujian.android">
 
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -23,15 +29,13 @@
 
 
         //私有进程：com.zhoujian.android：romote
-        <activity
-            android:name=".activity.SecondActivity"
-            android:process=":romote"/>
+        //android:process=":romote"
+        <activity android:name=".activity.SecondActivity"/>
 
 
         //全局进程：com.zhoujian.android.romote
-        <activity
-            android:name=".activity.ThirdActivity"
-            android:process="com.zhoujian.android.romote"/><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+        <activity android:name=".activity.ThirdActivity"
+            /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data
             android:name="com.google.android.gms.version"

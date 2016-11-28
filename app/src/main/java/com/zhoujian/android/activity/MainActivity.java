@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
 import com.zhoujian.android.R;
 import com.zhoujian.android.UserManager;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -26,6 +28,7 @@ import butterknife.InjectView;
 
 
   2.2 Android中多进程模式
+
   通过给四大组件指定android：process属性，我们可以轻易开启多进程模式
 
   使用多进程会有问题：
@@ -33,6 +36,14 @@ import butterknife.InjectView;
  （2）线程同步机制完全失效
  （3）SharedPreferences的可靠性下降
  （4）Application会多次创建
+
+ 2.3 IPC基础介绍
+
+
+ Serializable和Parcelable接口可以完成对象的序列化过程
+ 当我们通过Intent和Binder传输数据时就需要使用Serializable和Parcelable，
+ 还有当我们需要把对象持久化到存储设备上或者通过网络传输给其他客户端，就要完成对象的序列化
+
 
 
 
@@ -43,6 +54,12 @@ import butterknife.InjectView;
 public class MainActivity extends Activity {
     @InjectView(R.id.bt_start)
     Button mBtStart;
+
+
+
+
+
+
 
     //option+command+k    生命周期排序
 
