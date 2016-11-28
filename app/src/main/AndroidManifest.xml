@@ -44,6 +44,10 @@
         <service android:name=".service.MessagerService"
                  android:process=":romote"/>
 
+
+        <service android:name=".aidl.BookManagerService"
+                 android:process=":romote"/>
+
         <activity android:name=".activity.MessagerActivity"/>
 
         <meta-data

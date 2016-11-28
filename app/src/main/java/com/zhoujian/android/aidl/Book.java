@@ -17,6 +17,11 @@ public class Book implements Parcelable
     public String bookName;
 
 
+    public Book(int bookId, String bookName) {
+        this.bookId = bookId;
+        this.bookName = bookName;
+    }
+
     @Override
     public int describeContents() {
         return 0;

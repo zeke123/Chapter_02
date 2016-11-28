@@ -67,6 +67,11 @@ import butterknife.InjectView;
  一次处理一个请求，不存在并发执行的情形
 
 
+ 2.4.4 使用AIDL
+
+
+
+
 
 
  */
