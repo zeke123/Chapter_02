@@ -15,14 +15,13 @@ public class MyApplication extends Application
     //同时选中修改变量 ：control+command+g
     private String processName;
     @Override
-    public void onCreate() {
+    public void onCreate()
+    {
         super.onCreate();
         //抽取变量  option+command+f
         processName = ProcessNameUtil.getCurProcessName(getApplicationContext());
         Process.myPid();
         Log.e(TAG,"MyApplication start,process name:"+processName);
-
-
         //分别启动三个Activity  Application会重新创建
         //MyApplication start,process name:com.zhoujian.android
         //MyApplication start,process name:com.zhoujian.android:romote

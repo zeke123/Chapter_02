@@ -44,6 +44,27 @@ import butterknife.InjectView;
  当我们通过Intent和Binder传输数据时就需要使用Serializable和Parcelable，
  还有当我们需要把对象持久化到存储设备上或者通过网络传输给其他客户端，就要完成对象的序列化
 
+ 2.3.1 Serializable 接口
+
+ 2.3.2 Parcelable接口
+
+ 2.3.3 Binder
+
+ 2.4 Android中IPC的方式
+
+ 2.4.1 使用Bundle
+
+ 四大组件中的三大组件（Activity、Sevice、Receive）都支持在Intent中传递数据
+
+ Bundle实现了Parcelable接口，所以可以在不同进程间传输
+
+ 2.4.2 使用文件共享实现IPC
+
+
+
+
+
+
 
 
 

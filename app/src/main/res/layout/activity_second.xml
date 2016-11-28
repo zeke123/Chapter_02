@@ -4,6 +4,16 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2477d6"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:textSize="18sp"
+        android:paddingTop="10dp"
+        android:text="第二个界面"/>
+
     <Button
         android:id="@+id/bt_start"
         android:layout_width="match_parent"
