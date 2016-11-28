@@ -15,7 +15,8 @@ import butterknife.InjectView;
  * Created by zhoujian on 2016/11/16.
  */
 
-public class SecondActivity extends Activity {
+public class SecondActivity extends Activity
+{
 
     public static final String TAG = "SecondActivity";
     @InjectView(R.id.bt_start)
@@ -25,20 +26,16 @@ public class SecondActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-
         ButterKnife.inject(this);
-
         //在MainActivity中已经把UserManager.mUserId 赋值为2
         //但是在SeondActivity中UserManager.mUserId 值为1
         //这就是多进程使用带来的问题
         Log.e(TAG, "UserManager.mUserId ====" + UserManager.mUserId);
-
         initEvent();
-
     }
 
-    private void initEvent() {
-
+    private void initEvent()
+    {
         mBtStart.setOnClickListener(new View.OnClickListener()
         {
             @Override

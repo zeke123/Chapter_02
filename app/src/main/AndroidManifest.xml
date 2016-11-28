@@ -40,6 +40,12 @@
 
         <activity android:name=".activity.FourthActivity"
                   android:process="com.zhoujian.android.romote"/>
+
+        <service android:name=".service.MessagerService"
+                 android:process=":romote"/>
+
+        <activity android:name=".activity.MessagerActivity"/>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>

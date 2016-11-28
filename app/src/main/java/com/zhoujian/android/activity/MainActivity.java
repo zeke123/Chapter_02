@@ -60,7 +60,12 @@ import butterknife.InjectView;
 
  2.4.2 使用文件共享实现IPC
 
- 2.4.3 使用Messenger
+ 2.4.3 使用Messenger实现进程间通讯
+
+ 可以翻译为信使，通过它可以在不同进程中传递Message对象，底层是AIDL
+
+ 一次处理一个请求，不存在并发执行的情形
+
 
 
 
@@ -71,9 +76,7 @@ public class MainActivity extends Activity
 
     @InjectView(R.id.bt_start)
     Button mBtStart;
-
     //option+command+k    生命周期排序
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
