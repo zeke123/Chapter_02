@@ -60,35 +60,25 @@ import butterknife.InjectView;
 
  2.4.2 使用文件共享实现IPC
 
-
-
-
-
-
-
-
+ 2.4.3 使用Messenger
 
 
 
  */
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity
+{
+
     @InjectView(R.id.bt_start)
     Button mBtStart;
-
-
-
-
-
-
 
     //option+command+k    生命周期排序
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         ButterKnife.inject(this);
         //把mUserId赋值为2
         UserManager.mUserId = 2;

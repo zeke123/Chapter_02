@@ -42,11 +42,7 @@ public class ThirdActivity extends Activity {
         setContentView(R.layout.activity_third);
 
         ButterKnife.inject(this);
-
-
         clickEvent();
-
-
         try {
             File extDir = Environment.getExternalStorageDirectory();
             String filename = "catch.txt";
@@ -55,7 +51,6 @@ public class ThirdActivity extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         //序列化过程
         try {
             if (sdCardExit()) {
