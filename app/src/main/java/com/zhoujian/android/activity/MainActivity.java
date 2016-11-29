@@ -72,8 +72,6 @@ import butterknife.InjectView;
 
 
 
-
-
  */
 
 public class MainActivity extends Activity
