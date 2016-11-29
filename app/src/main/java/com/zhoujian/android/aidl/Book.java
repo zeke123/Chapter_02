@@ -13,9 +13,16 @@ public class Book implements Parcelable
     //自动生成Parcelable接口  command+n
 
     public int bookId;
-
     public String bookName;
 
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId=" + bookId +
+                ", bookName='" + bookName + '\'' +
+                '}';
+    }
 
     public Book(int bookId, String bookName) {
         this.bookId = bookId;

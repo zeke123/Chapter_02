@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.zhoujian.android.R;
 import com.zhoujian.android.UserManager;
@@ -107,11 +106,11 @@ public class SecondActivity extends Activity
 
 
         //.log
-        Log.d(TAG, mObject3);
+        //Log.d(TAG, mObject3);
 
 
         //.toast
-        Toast.makeText(this, mObject3, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, mObject3, Toast.LENGTH_SHORT).show();
 
 
     }
