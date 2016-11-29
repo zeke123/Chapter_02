@@ -28,9 +28,7 @@ public class BookManagerActivity extends Activity
         @Override
         public void onServiceConnected(ComponentName name, IBinder binder)
         {
-
             IBookManager bookManager = IBookManager.Stub.asInterface(binder);
-
             try
             {
                 mList = bookManager.getBookList();
@@ -39,8 +37,6 @@ public class BookManagerActivity extends Activity
             {
                 e.printStackTrace();
             }
-
-
         }
 
         @Override
@@ -95,5 +91,4 @@ public class BookManagerActivity extends Activity
     protected void onDestroy() {
         super.onDestroy();
     }
-
 }
