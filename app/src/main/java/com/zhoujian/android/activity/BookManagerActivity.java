@@ -12,15 +12,12 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.util.Log;
 import android.widget.Button;
-
 import com.zhoujian.android.R;
 import com.zhoujian.android.aidl.Book;
 import com.zhoujian.android.aidl.BookManagerService;
 import com.zhoujian.android.aidl.IBookManager;
 import com.zhoujian.android.aidl.IOnNewBookArriedListener;
-
 import java.util.List;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -37,7 +34,8 @@ public class BookManagerActivity extends Activity
 
     private IBookManager mIBookManager;
 
-    private Handler mHandler = new Handler(){
+    private Handler mHandler = new Handler()
+    {
 
         @Override
         public void handleMessage(Message msg) {
@@ -45,23 +43,23 @@ public class BookManagerActivity extends Activity
             switch (msg.what)
             {
                 case 1:
-
                     Log.d(TAG, "添加的新书为:" + msg.obj);
-
                     break;
-
             }
         }
     };
 
-    private ServiceConnection conn = new ServiceConnection() {
+    private ServiceConnection conn = new ServiceConnection()
+    {
         private List<Book> mList1;
         private List<Book> mList;
 
         @Override
-        public void onServiceConnected(ComponentName name, IBinder binder) {
+        public void onServiceConnected(ComponentName name, IBinder binder)
+        {
             IBookManager bookManager = IBookManager.Stub.asInterface(binder);
-            try {
+            try
+            {
 
                 mIBookManager= bookManager;
                 mList = bookManager.getBookList();
@@ -82,12 +80,14 @@ public class BookManagerActivity extends Activity
         }
 
         @Override
-        public void onServiceDisconnected(ComponentName name) {
+        public void onServiceDisconnected(ComponentName name)
+        {
             mIBookManager=null;
         }
     };
 
-    private IOnNewBookArriedListener mIOnNewBookArriedListener = new IOnNewBookArriedListener.Stub() {
+    private IOnNewBookArriedListener mIOnNewBookArriedListener = new IOnNewBookArriedListener.Stub()
+    {
         @Override
         public void onNewBookArrived(Book newBook) throws RemoteException {
             mHandler.obtainMessage(1,newBook).sendToTarget();
@@ -97,18 +97,15 @@ public class BookManagerActivity extends Activity
 
     //对生命周期方法进行排序  optioncommand+k
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_bookmanager);
-
         ButterKnife.inject(this);
         Intent intent = new Intent(BookManagerActivity.this, BookManagerService.class);
         bindService(intent, conn, Context.BIND_AUTO_CREATE);
 
     }
-
-
 
     @Override
     protected void onRestart() {

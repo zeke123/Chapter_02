@@ -6,7 +6,6 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
-
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -20,31 +19,33 @@ public class BookManagerService extends Service
 
     public static  final String TAG = "BookManagerService";
 
-
     private AtomicBoolean mAtomicBoolean = new AtomicBoolean(false);
-
 
     //CopyOnWriteArrayList 支持并发读与写
     private CopyOnWriteArrayList<Book> mBooksList = new CopyOnWriteArrayList<Book>();
 
     private CopyOnWriteArrayList<IOnNewBookArriedListener> mListeners = new CopyOnWriteArrayList<IOnNewBookArriedListener>();
 
-    private Binder mBinder = new IBookManager.Stub(){
+    private Binder mBinder = new IBookManager.Stub()
+    {
 
         @Override
-        public List<Book> getBookList() throws RemoteException {
+        public List<Book> getBookList() throws RemoteException
+        {
             return mBooksList;
         }
 
         @Override
-        public void addBook(Book book) throws RemoteException {
+        public void addBook(Book book) throws RemoteException
+        {
 
             mBooksList.add(book);
 
         }
 
         @Override
-        public void registListener(IOnNewBookArriedListener listener) throws RemoteException {
+        public void registListener(IOnNewBookArriedListener listener) throws RemoteException
+        {
 
             if (!mListeners.contains(listener))
             {
@@ -60,7 +61,8 @@ public class BookManagerService extends Service
 
 
         @Override
-        public void unregistListener(IOnNewBookArriedListener listener) throws RemoteException {
+        public void unregistListener(IOnNewBookArriedListener listener) throws RemoteException
+        {
 
             if (mListeners.contains(listener)) {
 
@@ -74,8 +76,6 @@ public class BookManagerService extends Service
         }
     };
 
-
-
     @Override
     public void onCreate()
     {
@@ -87,7 +87,6 @@ public class BookManagerService extends Service
         new Thread()
         {
             private int mInt;
-
             @Override
             public void run()
             {
@@ -116,7 +115,6 @@ public class BookManagerService extends Service
         }.start();
     }
 
-
     private void onNewBookArrived(Book book) throws RemoteException
     {
         mBooksList.add(book);
@@ -138,7 +136,8 @@ public class BookManagerService extends Service
 
 
     @Override
-    public void onDestroy() {
+    public void onDestroy()
+    {
         mAtomicBoolean.set(true);
         super.onDestroy();
     }
